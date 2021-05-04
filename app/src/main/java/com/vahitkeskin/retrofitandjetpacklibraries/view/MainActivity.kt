@@ -1,9 +1,8 @@
-package com.vahitkeskin.retrofitandjetpacklibraries
+package com.vahitkeskin.retrofitandjetpacklibraries.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.FragmentFactory
-import com.vahitkeskin.retrofitandjetpacklibraries.view.ArtImageFragmentFactory
+import com.vahitkeskin.retrofitandjetpacklibraries.R
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

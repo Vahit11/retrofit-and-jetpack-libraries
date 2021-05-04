@@ -1,4 +1,4 @@
-package com.vahitkeskin.retrofitandjetpacklibraries
+package com.vahitkeskin.retrofitandjetpacklibraries.dependencyinjection
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
