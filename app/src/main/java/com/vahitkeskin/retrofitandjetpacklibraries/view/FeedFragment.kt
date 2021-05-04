@@ -23,6 +23,7 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
         binding = FragmentFeedBinding.bind(view)
         binding.fab.setOnClickListener {
             Toast.makeText(context,"Click floating button",Toast.LENGTH_LONG).show()
+            Toast.makeText(context,"Click floating button",Toast.LENGTH_LONG).show()
         }
     }
 }
