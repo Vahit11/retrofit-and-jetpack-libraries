@@ -26,6 +26,7 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
             Thread.sleep(1000)
             Toast.makeText(context,"Click floating button",Toast.LENGTH_LONG).show()
             Toast.makeText(context,"Click floating button",Toast.LENGTH_LONG).show()
+            println("Vahit Keskin")
         }
     }
 }
