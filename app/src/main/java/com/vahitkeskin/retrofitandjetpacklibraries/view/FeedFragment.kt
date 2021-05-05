@@ -3,12 +3,10 @@ package com.vahitkeskin.retrofitandjetpacklibraries.view
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vahitkeskin.retrofitandjetpacklibraries.R
-import com.vahitkeskin.retrofitandjetpacklibraries.adapter.ArtImageAdapter
 import com.vahitkeskin.retrofitandjetpacklibraries.adapter.ArtRowAdapter
 import com.vahitkeskin.retrofitandjetpacklibraries.databinding.FragmentFeedBinding
 import com.vahitkeskin.retrofitandjetpacklibraries.viewmodel.ArtImagesViewModel
@@ -16,10 +14,10 @@ import javax.inject.Inject
 
 class FeedFragment @Inject constructor(
     private val artRowAdapter: ArtRowAdapter
-): Fragment(R.layout.fragment_feed) {
+) : Fragment(R.layout.fragment_feed) {
 
     private var fragmentFeedBinding: FragmentFeedBinding? = null
-    lateinit var viewModel: ArtImagesViewModel
+    private lateinit var viewModel: ArtImagesViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -43,7 +41,7 @@ class FeedFragment @Inject constructor(
     }
 
     private fun subscribeToObservers() {
-        viewModel.artImageList.observe(viewLifecycleOwner, Observer {
+        viewModel.artImageList.observe(viewLifecycleOwner, {
             artRowAdapter.artsDB = it
         })
     }

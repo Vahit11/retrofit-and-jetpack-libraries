@@ -53,6 +53,7 @@ class ArtImageAdapter @Inject constructor(
             setOnItemClickListener {
                 onItemClickListener?.let {
                     it(imageUrl)
+                    println(imageUrl)
                 }
             }
         }
