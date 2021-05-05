@@ -1,6 +1,6 @@
 ✔ Retrofit And Jetpack Libraries Projesine ait görseller ve açıklamaları.
 
-![image1](https://user-images.githubusercontent.com/36104238/117218116-3c089200-ae0b-11eb-936f-ab97c3c138f6.png)
+![image1](https://user-images.githubusercontent.com/36104238/117218862-aec63d00-ae0c-11eb-880d-3d506d565cfe.png)
 
 ![image2](https://user-images.githubusercontent.com/36104238/117218136-43c83680-ae0b-11eb-9cc4-062491da201f.png)
 
