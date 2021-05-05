@@ -1,37 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.FeedFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:clickable="true"
-        android:contentDescription="@string/todo"
-        android:focusable="true"
-        app:fabSize="normal"
-        app:layout_anchor="@id/recyclerViewFeed"
-        app:layout_anchorGravity="bottom|center"
-        app:srcCompat="@drawable/ic_baseline_note_add_24" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewFeed"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_anchor="@id/constraintLayout"
         app:layout_anchorGravity="center" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <com.github.clans.fab.FloatingActionMenu
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:padding="8dp"
+        app:menu_animationDelayPerItem="55"
+        app:menu_buttonSpacing="0dp"
+        app:menu_colorNormal="#654981"
+        app:menu_colorPressed="#584659"
+        app:menu_colorRipple="#861562"
+        app:menu_fab_hide_animation="@anim/fab_slide_out_to_right"
+        app:menu_fab_size="normal"
+        app:menu_icon="@drawable/fab_add"
+        app:menu_labels_colorNormal="#333"
+        app:menu_labels_colorPressed="#444"
+        app:menu_labels_colorRipple="#666"
+        app:menu_labels_cornerRadius="3dp"
+        app:menu_labels_ellipsize="none"
+        app:menu_labels_maxLines="-1"
+        app:menu_labels_position="left"
+        app:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
+        app:menu_labels_singleLine="false"
+        app:menu_labels_textSize="15sp"
+        app:menu_openDirection="up">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_note_add_24"
+            app:fab_label="Add Feed"
+            app:fab_size="mini" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
