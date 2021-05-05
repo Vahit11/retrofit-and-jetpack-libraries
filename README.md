@@ -10,7 +10,7 @@
   * ✅LiveData<br/>
   * ✅ViewBinding<br/>
 
-✔ Retrofit And Jetpack Libraries Projesine ait görseller ve açıklamaları.
+✔ Retrofit And Jetpack Libraries Projesine ait görseller ve açıklamaları.<br/>
 
 ![image1](https://user-images.githubusercontent.com/36104238/117218862-aec63d00-ae0c-11eb-880d-3d506d565cfe.png)
 
