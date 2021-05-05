@@ -44,7 +44,7 @@ class FeedFragment @Inject constructor(
 
     private fun subscribeToObservers() {
         viewModel.artImageList.observe(viewLifecycleOwner, Observer {
-
+            artRowAdapter.artsDB = it
         })
     }
 
