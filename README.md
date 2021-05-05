@@ -1,3 +1,15 @@
+↪Projenin yapımında kullanılan android teknolojileri
+  ✅Navigaiton
+  ✅Retrofit
+  ✅RxJAVA
+  ✅Fragment
+  ✅Room Database
+  ✅Dependency Injection
+  ✅Coroutines
+  ✅MVVM (Model View View Model)
+  ✅LiveData
+  ✅ViewBinding
+
 ✔ Retrofit And Jetpack Libraries Projesine ait görseller ve açıklamaları.
 
 ![image1](https://user-images.githubusercontent.com/36104238/117218862-aec63d00-ae0c-11eb-880d-3d506d565cfe.png)
