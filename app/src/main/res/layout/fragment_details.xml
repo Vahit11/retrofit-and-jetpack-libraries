@@ -12,33 +12,28 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_margin="30dp"
-        android:src="@drawable/ic_launcher_background" />
+        android:src="@drawable/vhticon" />
 
     <EditText
         android:id="@+id/detailsImageName"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:hint="ImageName" />
+        android:hint="Image Name" />
 
     <EditText
         android:id="@+id/detailsSavedUserName"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:hint="SavedUserName" />
-
-    <EditText
-        android:id="@+id/detailsSavedTimeName"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:hint="SavedTimeName" />
+        android:hint="Saved User Name" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/detailsFab"
+        android:layout_margin="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="end"
         android:src="@drawable/ic_baseline_check_24" />
 
 </LinearLayout>

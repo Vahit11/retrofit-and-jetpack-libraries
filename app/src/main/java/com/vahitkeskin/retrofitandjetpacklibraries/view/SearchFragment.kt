@@ -24,15 +24,11 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class SearchFragment @Inject constructor(
-    val artImageAdapter: ArtImageAdapter
-): Fragment(R.layout.fragment_search) {
+    private val artImageAdapter: ArtImageAdapter
+) : Fragment(R.layout.fragment_search) {
 
     private var fragmentSearchBinding: FragmentSearchBinding? = null
     lateinit var viewModel: ArtImagesViewModel
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -42,7 +38,7 @@ class SearchFragment @Inject constructor(
         val binding = FragmentSearchBinding.bind(view)
         fragmentSearchBinding = binding
 
-        var job : Job? = null
+        var job: Job? = null
 
         binding.etSearch.addTextChangedListener {
             job?.cancel()
@@ -59,19 +55,18 @@ class SearchFragment @Inject constructor(
         subscribeObservers()
 
         binding.rvSearchImage.adapter = artImageAdapter
-        binding.rvSearchImage.layoutManager = GridLayoutManager(requireContext(),3)
+        binding.rvSearchImage.layoutManager = GridLayoutManager(requireContext(), 3)
         artImageAdapter.setOnItemClickListener {
             findNavController().popBackStack()
             viewModel.setSelectedImage(it)
-            println("it: $it")
         }
     }
 
     private fun subscribeObservers() {
-        viewModel.imagesList.observe(viewLifecycleOwner, Observer {
-            when(it.status) {
+        viewModel.imagesList.observe(viewLifecycleOwner, {
+            when (it.status) {
                 Status.SUCCESS -> {
-                    val urls = it.data?.hits?.map {imageResult ->
+                    val urls = it.data?.hits?.map { imageResult ->
                         imageResult.previewURL
                     }
                     artImageAdapter.images = urls ?: listOf()
@@ -79,7 +74,7 @@ class SearchFragment @Inject constructor(
                 }
 
                 Status.ERROR -> {
-                    Toast.makeText(requireContext(),"Error",Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), "Error", Toast.LENGTH_LONG).show()
                     fragmentSearchBinding?.pbLoadImage?.visibility = View.GONE
                 }
 

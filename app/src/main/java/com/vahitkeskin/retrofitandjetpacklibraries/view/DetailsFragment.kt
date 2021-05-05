@@ -1,13 +1,11 @@
 package com.vahitkeskin.retrofitandjetpacklibraries.view
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.RequestManager
@@ -15,6 +13,8 @@ import com.vahitkeskin.retrofitandjetpacklibraries.R
 import com.vahitkeskin.retrofitandjetpacklibraries.databinding.FragmentDetailsBinding
 import com.vahitkeskin.retrofitandjetpacklibraries.util.Status
 import com.vahitkeskin.retrofitandjetpacklibraries.viewmodel.ArtImagesViewModel
+import java.text.SimpleDateFormat
+import java.util.*
 import javax.inject.Inject
 
 class DetailsFragment @Inject constructor(
@@ -24,6 +24,7 @@ class DetailsFragment @Inject constructor(
     private var fragmentDetailsBinding: FragmentDetailsBinding? = null
     private lateinit var viewModel: ArtImagesViewModel
 
+    @SuppressLint("SimpleDateFormat")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -48,35 +49,42 @@ class DetailsFragment @Inject constructor(
 
         requireActivity().onBackPressedDispatcher.addCallback(callBack)
 
+        val simpleDateFormatHistory = SimpleDateFormat("dd/MM/yyyy")
+        val simpleDateFormatHour = SimpleDateFormat("HH:mm:ss")
+
+        val currentHistoryData = simpleDateFormatHistory.format(Date())
+        val currentHourData = simpleDateFormatHour.format(Date())
+
         binding.detailsFab.setOnClickListener {
             viewModel.makeArt(
+                currentHistoryData,
+                currentHourData,
                 binding.detailsImageName.text.toString(),
                 binding.detailsSavedUserName.text.toString(),
-                binding.detailsSavedTimeName.text.toString(),
             )
         }
     }
 
     private fun subscribeObservers() {
-        viewModel.selectedArtImageUrl.observe(viewLifecycleOwner, Observer {url ->
+        viewModel.selectedArtImageUrl.observe(viewLifecycleOwner, { url ->
             fragmentDetailsBinding?.let {
                 glide.load(url).into(it.civArtDetails)
             }
         })
 
-        viewModel.insertArtMsg.observe(viewLifecycleOwner, Observer {
+        viewModel.insertArtMsg.observe(viewLifecycleOwner, {
             when (it.status) {
                 Status.SUCCESS -> {
-                    Toast.makeText(requireContext(),"Success",Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), "Success", Toast.LENGTH_LONG).show()
+                    findNavController().popBackStack()
                     viewModel.resetArtMessage()
                 }
 
                 Status.ERROR -> {
-                    Toast.makeText(requireContext(),"Error",Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), "Error", Toast.LENGTH_LONG).show()
                 }
 
                 Status.LOADING -> {
-
                 }
             }
         })

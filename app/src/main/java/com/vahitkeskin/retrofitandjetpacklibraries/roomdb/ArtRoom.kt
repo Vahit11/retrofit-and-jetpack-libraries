@@ -7,7 +7,8 @@ import androidx.room.PrimaryKey
 data class ArtRoom(
     var imageName: String,
     var savedUserName: String,
-    var savedTimeName: String,
+    var savedHistoryTimeName: String,
+    var savedHourTimeName: String,
     var imageUrl: String,
     @PrimaryKey(autoGenerate = true)
     val id: Int? = null

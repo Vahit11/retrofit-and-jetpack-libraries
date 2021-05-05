@@ -47,12 +47,15 @@ class ArtRowAdapter @Inject constructor(
         val imageView = holder.itemView.findViewById<CircleImageView>(R.id.artRowCim)
         val imageName = holder.itemView.findViewById<TextView>(R.id.artRowImageName)
         val savedUserName = holder.itemView.findViewById<TextView>(R.id.artRowSavedUserName)
-        val savedTime = holder.itemView.findViewById<TextView>(R.id.artRowSavedTime)
+        val savedHistoryTime = holder.itemView.findViewById<TextView>(R.id.artRowSavedHistoryTime)
+        val savedHourTime = holder.itemView.findViewById<TextView>(R.id.artRowSavedHourTime)
 
         holder.itemView.apply {
-            imageName.text = "Image: ${artsList.imageName}"
-            savedUserName.text = "User: ${artsList.savedUserName}"
-            savedTime.text = "Time: ${artsList.savedTimeName}"
+            imageName.text = "${artsList.imageName}"
+            savedUserName.text = "${artsList.savedUserName}"
+
+            savedHistoryTime.text = "${artsList.savedHistoryTimeName}"
+            savedHourTime.text = "${artsList.savedHourTimeName}"
 
             glideImage.load(artsList.imageUrl).into(imageView)
 

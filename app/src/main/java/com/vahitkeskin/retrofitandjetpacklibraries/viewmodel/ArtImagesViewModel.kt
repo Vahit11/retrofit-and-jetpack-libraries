@@ -46,13 +46,13 @@ class ArtImagesViewModel @ViewModelInject constructor(
         repository.insertArtImage(artRoom)
     }
 
-    fun makeArt(name: String, user: String, time: String) {
-        if (name.isEmpty() || user.isEmpty() || time.isEmpty()) {
+    fun makeArt(history: String, hour: String, name: String, user: String) {
+        if (history.isEmpty() || hour.isEmpty() || name.isEmpty() || user.isEmpty()) {
             insertArtMessage.postValue(Resource.error("Name, user or time is not null!!!", null))
             return
         }
 
-        val artRoom = ArtRoom(name, user, time, selectedArtImageUrl.value ?: "")
+        val artRoom = ArtRoom(name,user,history,hour,selectedArtImageUrl.value ?: "")
         insertArtRoom(artRoom)
         setSelectedImage("")
         insertArtMessage.postValue(Resource.success(artRoom))

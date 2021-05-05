@@ -50,10 +50,10 @@ class ArtImageAdapter @Inject constructor(
 
         holder.itemView.apply {
             glide.load(imageUrl).into(imageView)
-            setOnItemClickListener {
+            setOnClickListener {
                 onItemClickListener?.let {
                     it(imageUrl)
-                    println(imageUrl)
+                    println("Click URL: $imageUrl")
                 }
             }
         }
