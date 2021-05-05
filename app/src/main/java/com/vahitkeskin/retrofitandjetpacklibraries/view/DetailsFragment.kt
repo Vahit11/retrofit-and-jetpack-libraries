@@ -44,21 +44,17 @@ class DetailsFragment @Inject constructor(
                 viewModel.setSelectedImage("")
                 findNavController().popBackStack()
             }
-
         }
 
         requireActivity().onBackPressedDispatcher.addCallback(callBack)
 
-        val simpleDateFormatHistory = SimpleDateFormat("dd/MM/yyyy")
-        val simpleDateFormatHour = SimpleDateFormat("HH:mm:ss")
-
-        val currentHistoryData = simpleDateFormatHistory.format(Date())
-        val currentHourData = simpleDateFormatHour.format(Date())
+        val simpleDateFormatHistory = SimpleDateFormat("dd/MM/yyyy").format(Date())
+        val simpleDateFormatHour = SimpleDateFormat("HH:mm:ss").format(Date())
 
         binding.detailsFab.setOnClickListener {
             viewModel.makeArt(
-                currentHistoryData,
-                currentHourData,
+                simpleDateFormatHistory,
+                simpleDateFormatHour,
                 binding.detailsImageName.text.toString(),
                 binding.detailsSavedUserName.text.toString(),
             )
