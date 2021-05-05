@@ -71,7 +71,7 @@ class DetailsFragment @Inject constructor(
         viewModel.insertArtMsg.observe(viewLifecycleOwner, {
             when (it.status) {
                 Status.SUCCESS -> {
-                    Toast.makeText(requireContext(), "Success", Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), "Saved Room Database", Toast.LENGTH_LONG).show()
                     findNavController().popBackStack()
                     viewModel.resetArtMessage()
                 }

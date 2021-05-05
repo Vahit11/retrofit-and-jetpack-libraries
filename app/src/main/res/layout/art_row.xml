@@ -28,7 +28,9 @@
                     android:id="@+id/artRowCim"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:src="@drawable/vhticon"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
                     app:civ_border_color="@android:color/white"
                     app:civ_border_width="2dp" />
 
@@ -41,7 +43,6 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
                         android:layout_marginBottom="5dp"
                         android:text="Image Name:"
                         android:textColor="@android:color/white"
@@ -52,7 +53,6 @@
                         android:id="@+id/artRowImageName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
                         android:layout_marginBottom="5dp"
                         android:text="ImageName"
                         android:textColor="@android:color/white"
@@ -61,7 +61,6 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
                         android:layout_marginBottom="5dp"
                         android:text="User Name:"
                         android:textColor="@android:color/white"
@@ -72,12 +71,10 @@
                         android:id="@+id/artRowSavedUserName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
                         android:layout_marginBottom="5dp"
                         android:text="SavedUserName"
                         android:textColor="@android:color/white"
                         android:textSize="15sp" />
-
 
                 </LinearLayout>
 

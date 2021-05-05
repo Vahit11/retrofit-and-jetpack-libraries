@@ -51,11 +51,11 @@ class ArtRowAdapter @Inject constructor(
         val savedHourTime = holder.itemView.findViewById<TextView>(R.id.artRowSavedHourTime)
 
         holder.itemView.apply {
-            imageName.text = "${artsList.imageName}"
-            savedUserName.text = "${artsList.savedUserName}"
+            imageName.text = artsList.imageName
+            savedUserName.text = artsList.savedUserName
 
-            savedHistoryTime.text = "${artsList.savedHistoryTimeName}"
-            savedHourTime.text = "${artsList.savedHourTimeName}"
+            savedHistoryTime.text = artsList.savedHistoryTimeName
+            savedHourTime.text = artsList.savedHourTimeName
 
             glideImage.load(artsList.imageUrl).into(imageView)
 

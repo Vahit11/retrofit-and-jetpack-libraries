@@ -10,7 +10,6 @@ import com.vahitkeskin.retrofitandjetpacklibraries.repository.ArtImageRepository
 import com.vahitkeskin.retrofitandjetpacklibraries.roomdb.ArtRoom
 import com.vahitkeskin.retrofitandjetpacklibraries.util.Resource
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 class ArtImagesViewModel @ViewModelInject constructor(
     private val repository: ArtImageRepositoryInterface
@@ -48,7 +47,7 @@ class ArtImagesViewModel @ViewModelInject constructor(
 
     fun makeArt(history: String, hour: String, name: String, user: String) {
         if (history.isEmpty() || hour.isEmpty() || name.isEmpty() || user.isEmpty()) {
-            insertArtMessage.postValue(Resource.error("Name, user or time is not null!!!", null))
+            insertArtMessage.postValue(Resource.error("Name or user is not null!!!", null))
             return
         }
 

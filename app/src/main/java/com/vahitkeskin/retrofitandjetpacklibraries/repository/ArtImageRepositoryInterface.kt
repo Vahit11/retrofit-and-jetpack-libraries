@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import com.vahitkeskin.retrofitandjetpacklibraries.model.Model
 import com.vahitkeskin.retrofitandjetpacklibraries.roomdb.ArtRoom
 import com.vahitkeskin.retrofitandjetpacklibraries.util.Resource
-import retrofit2.Response
 
 interface ArtImageRepositoryInterface {
 
