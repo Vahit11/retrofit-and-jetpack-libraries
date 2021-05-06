@@ -1,5 +1,5 @@
 * ↪Projenin yapımında kullanılan android teknolojileri<br/>
-  * Navigaiton<br/>
+  * Navigation<br/>
   * Retrofit<br/>
   * RxJAVA<br/>
   * Fragment<br/>
